@@ -19,6 +19,7 @@ with open(filename, "r") as csv_file:
     max_votes = 0
     winner = ""
 
+
     for row in csvreader:
         candidate = row[candidate_ind]
         total_votes += 1
@@ -50,8 +51,8 @@ with open(output_file,'w') as output:
         votes = candidates[candidate]
         percentage = round(votes/total_votes*100,3)
         
-        print(f"{candidate}: {percentage}% votes")
-        output.write(f"{candidate}: {percentage}% votes\n")
+        print(f"{candidate}: {percentage}% ({candidates[candidate]})")
+        output.write(f"{candidate}: {percentage}% ({candidates[candidate]})\n")
 
     print("-----------------------------")
     print(f"Winner: {winner}")
